@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char *getFromUser() {
+  printf("Please enter some text: ");
+  char *text = malloc(sizeof(char));
+  if (text == NULL) {
+    exit(1);
+  }
+  size_t *n;
+  getline(&text, n, stdin);
+  return text;
+}
+
+void tockenizeAndPrint(char *text) {
+  size_t size = strlen(text);
+  char testarr[size + 1];
+  strcpy(testarr, text);
+  char *saveptr;
+  char *token;
+  printf("Tokens: \n");
+  token = strtok_r(text, " ", &saveptr);
+
+  while (token != NULL) {
+    printf("    %s\n", token);
+    token = strtok_r(NULL, " ", &saveptr);
+  }
+
+  int main() {
+    char *text = getFromUser();
+    printf("%s \n", text);
+  }

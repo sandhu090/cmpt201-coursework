@@ -31,5 +31,5 @@ void tockenizeAndPrint(char *text) {
 int main() {
   char *text = getFromUser();
   tockenizeAndPrint(text);
-  free(text);
+  free (text);
 }

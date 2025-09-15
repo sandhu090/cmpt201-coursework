@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *getFromUser() {
+    char *
+    getFromUser() {
   printf("Please enter some text: ");
   char *text = malloc(sizeof(char));
   if (text == NULL) {
@@ -31,5 +32,4 @@ void tockenizeAndPrint(char *text) {
 int main() {
   char *text = getFromUser();
   tockenizeAndPrint(text);
-  free(text);
 }
